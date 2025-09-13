@@ -1,0 +1,22 @@
+
+:root {
+  --bg: #0b0e11;
+  --fg: #e6edf3;
+  --muted: #9aa4af;
+  --primary: #3b82f6;
+  --success: #10b981;
+  --danger: #ef4444;
+  --card: #111418;
+  --border: #20242a;
+}
+
+[data-theme="light"] {
+  --bg: #ffffff;
+  --fg: #0b0e11;
+  --muted: #475569;
+  --primary: #2563eb;
+  --success: #059669;
+  --danger: #dc2626;
+  --card: #f8fafc;
+  --border: #e2e8f0;
+}

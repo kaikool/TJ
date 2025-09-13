@@ -1,0 +1,26 @@
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() { return request.auth != null; }
+    function isOwner(resourceData) {
+      return isSignedIn() && resourceData.ownerId == request.auth.uid;
+    }
+
+    match /trades/{id} {
+      allow read: if isSignedIn() && isOwner(resource.data);
+      allow create: if isSignedIn() && request.resource.data.ownerId == request.auth.uid;
+      allow update, delete: if isSignedIn() && isOwner(resource.data);
+    }
+
+    match /balances/{id} {
+      allow read: if isSignedIn() && isOwner(resource.data);
+      allow create: if isSignedIn() && request.resource.data.ownerId == request.auth.uid;
+      allow update, delete: if isSignedIn() && isOwner(resource.data);
+    }
+
+    match /users/{id} {
+      allow read, write: if isSignedIn() && request.auth.uid == id;
+    }
+  }
+}
