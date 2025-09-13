@@ -1,9 +1,12 @@
-
 {
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "module": "ESNext",
     "skipLibCheck": true,
     "jsx": "react-jsx",
@@ -14,13 +17,32 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["src/components/*"],
-      "@/features/*": ["src/features/*"],
-      "@/lib/*": ["src/lib/*"],
-      "@/services/*": ["src/services/*"],
-      "@/styles/*": ["src/styles/*"],
-      "@/app/*": ["src/app/*"]
-    }
+      "@/components/*": [
+        "src/components/*"
+      ],
+      "@/features/*": [
+        "src/features/*"
+      ],
+      "@/lib/*": [
+        "src/lib/*"
+      ],
+      "@/services/*": [
+        "src/services/*"
+      ],
+      "@/styles/*": [
+        "src/styles/*"
+      ],
+      "@/app/*": [
+        "src/app/*"
+      ]
+    },
+    "types": [
+      "vite/client"
+    ],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }
